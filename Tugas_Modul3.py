@@ -1,5 +1,5 @@
 M = int(input("Masukkan Modal Awal: "))
-r = float(input("Masukkan Suku Bungan Tahunan (%): "))
+r = float(input("Masukkan Suku Bunga Tahunan (%): "))
 T = float(input("Masukkan Target Investasi: "))
 tahun = 0
 for tahun in range (1,M) :
