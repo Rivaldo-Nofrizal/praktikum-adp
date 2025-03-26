@@ -1,0 +1,10 @@
+baris = int(input("Masukkan jumlah baris : "))
+kolom = int(input("Masukkan Jumlah kolom : "))
+
+for i in range(baris) :
+    for j in range(kolom) :
+        if (i + j)%2==0 :
+            print("X", end=" ")
+        else :
+            print("O", end=" ")
+    print()
