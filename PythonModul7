@@ -1,0 +1,26 @@
+def kecepatan_akhir(v0, a, t):
+    return v0 + a * t
+
+def jarak(v0, a, t):
+    return v0 * t + 0.5 * a * (t ** 2)
+
+n = int(input("Masukkan jumlah data (n): "))
+
+data = []
+
+for i in range(n):
+    print(f"\nInput data ke-{i+1}")
+    v0 = float(input("Masukkan kecepatan awal (m/s): "))
+    a = float(input("Masukkan percepatan (m/s^2): "))
+    t = float(input("Masukkan waktu (s): "))
+
+    v = kecepatan_akhir(v0, a, t)
+    s = jarak(v0, a, t)
+
+    data.append([v0, a, t, v, s])
+
+print("\nHasil Perhitungan (GLBB):")
+print("No | Kecepatan Awal | Percepatan | Waktu | Kecepatan Akhir | Jarak")
+print("------------------------------------------------------------------")
+for i in range(n):
+    print(f"{i+1:2} | {data[i][0]:14} | {data[i][1]:10} | {data[i][2]:5} | {data[i][3]:15} | {data[i][4]:.2f}")
