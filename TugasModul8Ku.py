@@ -1,4 +1,3 @@
-# Fungsi untuk menghitung jumlah pengalaman dari string
 def hitung_jumlah_pengalaman(pengalaman_str):
     jumlah = 1 if len(pengalaman_str) > 0 else 0
     for c in pengalaman_str:
@@ -6,10 +5,9 @@ def hitung_jumlah_pengalaman(pengalaman_str):
             jumlah += 1
     return jumlah
 
-# Fungsi untuk mengecek apakah bidang ada dalam pengalaman
 def bidang_ada_dalam_pengalaman(bidang, pengalaman_str):
     kata = ''
-    for c in pengalaman_str + ';':  # tambahan ';' agar kata terakhir ikut dicek
+    for c in pengalaman_str + ';':  
         if c == ';':
             if kata.lower() == bidang.lower():
                 return True
@@ -18,7 +16,6 @@ def bidang_ada_dalam_pengalaman(bidang, pengalaman_str):
             kata += c
     return False
 
-# Fungsi untuk menghitung nilai total
 def hitung_nilai(wawancara, pengalaman_str, bidang, ketua):
     nilai = hitung_jumlah_pengalaman(pengalaman_str)
     if ketua:
@@ -27,7 +24,6 @@ def hitung_nilai(wawancara, pengalaman_str, bidang, ketua):
         nilai += 3
     return wawancara + nilai
 
-# Fungsi seleksi dan pengelompokan koordinator berdasarkan bidang
 def seleksi_koordinator(data):
     bidang_dict = {
         'Acara': [],
@@ -57,7 +53,6 @@ def seleksi_koordinator(data):
             'ketua': ketua
         })
 
-    # Urutkan berdasarkan nilai tertinggi
     for bidang in bidang_dict:
         daftar = bidang_dict[bidang]
         for i in range(len(daftar)):
@@ -67,7 +62,6 @@ def seleksi_koordinator(data):
 
     return bidang_dict
 
-# Menampilkan semua data cakoor
 def tampilkan_data(data):
     print("======= SEMUA DATA CAKOOR =======")
     for d in data:
@@ -79,7 +73,6 @@ def tampilkan_data(data):
         print(f"Bidang    : {d[5]}")
         print(f"Ketua     : {'Ya' if d[6] else 'Tidak'}")
 
-# Menampilkan hasil seleksi
 def tampilkan_hasil(hasil):
     print("\n======= KOORDINATOR TERPILIH =======")
     for bidang in hasil:
@@ -89,7 +82,6 @@ def tampilkan_hasil(hasil):
             cakoor = top2[i]
             print(f"{i+1}. {cakoor['nama']} (NIM: {cakoor['nim']}, Kelas: {cakoor['kelas']}) - Nilai: {cakoor['nilai']}")
 
-# Simpan hasil ke file teks
 def simpan_ke_file(hasil, nama_file):
     f = open(nama_file, 'w')
     f.write("======= HASIL SELEKSI KOORDINATOR =======\n")
@@ -102,9 +94,7 @@ def simpan_ke_file(hasil, nama_file):
     f.close()
     print(f"\nHasil telah disimpan di file: {nama_file}")
 
-# Main program
 def main():
-    # Array 2D data cakoor
     data = [
         ["Rifqa Humaira Zumarnis", "2410431001", "A", "Acara;Pubdok", 85, "Acara", True],
         ["Rivaldo Marsel Liam", "2410431026", "C", "Danus;Perlengkapan", 90, "Danus", False],
